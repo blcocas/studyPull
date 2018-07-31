@@ -1,0 +1,22 @@
+{
+  "name": "2018_summer",
+  "version": "1.0.0",
+  "description": "1. nodejs 공부! 기본부터",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/blcocas/studyPull.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/blcocas/studyPull/issues"
+  },
+  "homepage": "https://github.com/blcocas/studyPull#readme",
+  "dependencies": {
+    "underscore": "^1.9.1"
+  }
+}
