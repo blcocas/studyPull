@@ -1,0 +1,51 @@
+1.
+web 은 문서에서관점에서는 정적, 
+javascript가 등장하면서 web은 동적인, 프로그래밍적인 요소를 갖게됨. 
+html의 밑바닥 밑에서 복합적인 상호작용을 할수 있게 됨. 
+javascript는 원래 web의 울타리 안에 있었다. 2004년도 구글 gmail서비스,javascript기반으로한
+ 순수한 웹기술을 이용함. 구글 gmap또한 순수한 웹기술을 통해 javascript로 구현.
+개발자들은 javasciprt의 가능성을 보았음.
+Web browser만 있으면 이 웹앱을 사용가능, 접근성이 상당히 좋음.
+구글이 v8엔진을 오픈소스로 공개. > 개발자들은 javascript를 web이 아닌 분야에서도 사용할
+수 있게됨. web에서는 javascript만 사용 가능, 또한 javascript 다른분야에서도 사용가능하게
+됨. 
+여기서 nodejs, 구글이 만든 v8 javascript엔진, event-driven, non-blocking i/o
+web browser에서 작동하는 javascript뿐만 아니라 서버쪽에서도 작동하는 javascript, 그게 바로
+nodejs.
+javascript의 개념 : laguange측면, Runtime(동작환경)측면 에서의 javascript.
+ljavascript라는 언어를 사용해서 web browser와 nodejs(서버)의 runtime에서 사용한다는 뜻.
+즉 js를 쓸수있다면 web browser와 nodejs(서버)를 쓸 수 있다는 뜻. 문법은 똑같지만 구체적인
+함수의 용도는 다르다는것. web browser와 nodejs는 서로 다른영역이지만 서로 같이작동.
+nodejs runtime의 경쟁자? pyhthon, php, java등이 있음.
+nodejs의 장점 : 속도(v8엔진), event driven, non-blocking i/o
+또한 web browser, server둘다 하나의 언어, javascript로 하나의 완결된 애플리케이션을 구현할 수 있음.
+
+2.
+npm init : package.json 파일 생성(파일 의존관계를 명시하는 문서), 이 package dependency
+는 이 하위폴더까찌 다 포함
+--save 옵션 : package.json파일에 dependency추가, 5버전부터는 자동으로.
+-g : 글로벌패키지에 추가, 그냥 이컴퓨터에서 이 package를 다 쓸수 있음.
+
+3.
+uglify-js(npm)
+machine이 이코드를 컴파일하는데에 필요한 것들을 제외
+한 모든것들을 간단히(공백제거, 변수 간단히)해서 용량을 줄임.
+
+4.
+underscore(npm)
+유용한 유틸함수를 모아놓은 라이브러리...
+
+5. 콜백함수
+6. 동기와 비동기
+synchronous 와 asynchronous
+nodejs는 asynchronous임.
+동기 > 빨래하고 설거지하고 청소한다.순서에 의존. C는 역시 동기임. 절차지향 프로그래밍이니까.
+
+비동기 > 빨래하는 업체, 설거지하는 업체,청소하는 업체에게 각각 맡김.
+이렇게 처리하면 문제는 뭐가먼저 될지는 모름. 순서에 의존하지 않음. 순서가 중요하지 않다면 비동기가 좋음.
+
+nodejs 문서의 함수 설명을 보면 각 함수가 synch인것도 있고 asynch인것도 있음. 예를들어
+fileSystem의 fs.readFile과 fs.readFileSync가 있음. nodejs는 기본적으로 asynch이므로 default가 asynch임.
+nodejs의 철학은 비동기적이기 때문에 문서에도 sysnc사용을 지양하고 있음.
+
+
