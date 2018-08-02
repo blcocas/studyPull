@@ -52,6 +52,50 @@ app.get('/templete',function(req,res){
   res.render('temp', {time:Date(), title:"pug"}) //templete 파일 불러오기
 })
 
+//query string 예
+app.get('/query',function(req,res){
+  var topics = [
+    'Darius',
+    'Orrn',
+    'Nasus',
+  ]
+
+  var id = req.query.id; //query접근하기
+
+  var output = `
+  <a href="/query?">홈</a><br>
+  <a href="/query?id=0">다리우스</a><br>
+  <a href="/query?id=1">오른</a><br>
+  <a href="/query
+  ?id=2">나서스</a><br><br>
+  ${topics[id]}
+  `
+  res.send(output);
+})
+
+//sematics url 예
+app.get('/semantic/:id',function(req,res){
+  var topics = [
+    'Darius',
+    'Orrn',
+    'Nasus',
+  ]
+  var id = req.params.id; // semantic에 접근하기
+
+  var output = `
+  <a href="/semantic/100">홈</a><br>
+  <a href="/semantic/0">다리우스</a><br>
+  <a href="/semantic/1">오른</a><br>
+  <a href="/semantic/2">나서스</a><br><br>
+  ${topics[id]}
+  `
+  res.send(output);
+})
+app.get('/semantic/:id/:mode',function(req,res){
+  res.send(req.params.id + ' and ' + req.params.mode);
+})
+
+
 app.listen(3000, function(){
   console.log('Connected to 3000 port!');
 })

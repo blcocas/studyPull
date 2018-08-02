@@ -1,0 +1,39 @@
+쿼리 스트링?
+우리의 웹애플리케이션은 사용자의 입력에 따라서 다른 결과를 아웃풋으로 내어야 함.
+root/topic
+root/login
+이런건 path라고 함.이렇게 path에 따라서 다른 결과를 줌.
+
+http://a.com/topic?id=1  
+> 전체를 url이라고 부름,
+> http :를 프로토콜
+> a.com :도메인
+> topic : path
+> id=1 : query string 
+
+이 토픽이라는 path뒤에다가 ?id1이 붙으면 topic이라는 route에다가 id가 1이라는 값을
+전달하는 것임 
+
+http://a.com/topic?id=2
+http://a.com/topic?id=3
+이렇게 topic이라는 경로에서 id의 값에 따라서 다른 결과를 낼 수 있다.
+이런 ?이후에 나타나는 data들을 query string이라고 한다.
+또한 query string이 포함된 url도 만들 수 있다.
+
+query객체의 사용
+req.query.??
+
+
+semantic url?
+querystring말고 다른 방법이 있음 그게 바로 semantic url
+http://example.com/topic?page=name > http://example.com/topic/name
+훨씬 깔끔함.
+
+get방식과 post방식
+get방식은 사용자가 요청에 의해서 앱은 응답해주는것.
+사용자입장에선 앱의 응답, 정보를 가져오는(get)하는것.
+
+post방식 사용자의 정보를 서버에 전송! 사용자의 정보를 서버로 전송하는것을
+post라고 한다.
+
+
