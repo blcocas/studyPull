@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 
+//body-parser setting
+var bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 app.use(express.static('public')); //static파일 디렉토리
 
@@ -95,6 +99,27 @@ app.get('/semantic/:id/:mode',function(req,res){
   res.send(req.params.id + ' and ' + req.params.mode);
 })
 
+
+
+//form with GET
+app.get("/form_get",function(req,res){
+  res.render('form_get');
+})
+app.get('/form_get/receiver',function(req,res){
+  var title = req.query.title;
+  var desc = req.query.desc;
+  res.send("GET! <br>" + title + ' ' + desc);
+})
+
+//form with POST
+app.get("/form_post",function(req,res){
+  res.render('form_post');
+})
+app.post('/form_post/receiver',function(req,res){
+  var title = req.body.title;
+  var desc = req.body.desc;
+  res.send("POST! <br>"+ title + ' ' + desc);
+})
 
 app.listen(3000, function(){
   console.log('Connected to 3000 port!');
