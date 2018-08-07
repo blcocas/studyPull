@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title Topic
+  body
+    h1
+      a(href='/topic') Topic!
+    a(href='/topic_new') New!
+    ol
+      each val in topics
+        li
+          a(href='/topic/'+val)= val
+
+    h2= title
+    p= desc
+A

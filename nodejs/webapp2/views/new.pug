@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title NEW
+  body
+    h1
+      a(href='/topic') Topic!
+    a(href='/topic_new') New!
+    ol
+      each val in topics
+        li
+          a(href='/topic/'+val)= val
+
+    h2= title
+    p= desc
+
+    h1 Make New Topic
+    form(action='/topic' method='post')
+      p
+        input(type='text', name='title')
+      p
+        textarea(name='desc')
+      p
+        input(type='submit')

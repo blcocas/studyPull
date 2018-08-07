@@ -1,0 +1,28 @@
+<pre code="name" class="brush:xml">
+
+</pre>
+
+포스트 방식은 다시말해 사용자가 서버에게 데이타를 전송하는것. 
+반대는 get인데 사용자가 서버에서 데이타를 get하는것.
+
+method의 default는 get
+
+
+body-parser
+ post방식으로 전송한 데이터를 우리의 앱에서 사용할 수 있도록 해주는 미들웨어
+
+
+get과 post
+언제 get을 쓰고 언제 post를 쓰는가
+
+링크를 클릭했을때, 내가 원하는 화면을 get하는것... 정보에 대한 주소를 나타날때는
+url에 querystring, 모든 정보가 있어야함.
+
+만약 아이디나 비밀번호를 get방식으로 form제출을 하게되면? url에 id=blahblah password=1234
+이런식으로 다 노출하게 된다. url에 모든 정보가 나타나기 떄문이다..
+그렇기 때문에 이런 정보를 제출할때에는 post방식으로 하는게 적합하다. post방식은
+url에 정보가 드러나지 않는다.
+또한 url의 길이는 한계가 있기때문에 전송할 데이터가 많게되면 get은 적합하지 않다.
+데이터가 많을때는 post가 적합하다.
+get은 기본적으로 exrpess가 제공, post는 제공하지 않음, 그래서 미들웨어(body-parser)를 씀
+사실, get과 post둘다 보안에 취약함...

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title NewFileCreation
+  body
+    h2
+      a(href='/topic') TopicList!
+    ul
+      each val in topics
+        li
+          a(href='/topic/'+val)= val
+    div
+      a(href='/topic/new') Make New!
+    h3= title
+    div= content
+
+    h2 Make New File!
+    form(action='/topic', method='post')
+      p
+        input(type='text', name='title')
+      p
+        textarea(name='content')
+      p
+        input(type='submit')
