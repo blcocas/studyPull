@@ -4,7 +4,16 @@ const app = express();
 const fs = require('fs');
 
 const multer = require('multer');
-const upload = multer){dest : 'uploads/'};
+//const upload = multer({dest : 'uploads/'});
+var storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, 'uploads')
+  },
+  filename: function (req, file, cb) {
+    cb(null, file.originalname)
+  }
+});
+const upload = multer({ storage: storage });
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -29,8 +38,9 @@ app.get('/upload',function(req,res){
   res.render('upload');
 })
 
-app.post('upload',function(req,res){
-  res.send('uploaded!');
+app.post('/upload', upload.single('userfile'),function(req,res){
+  console.log(req.file);
+  res.send('uploaded! ' + req.file.filename);
 })
 
 
