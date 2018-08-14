@@ -1,0 +1,15 @@
+<pre name="code" class="javascript">
+
+</pre>
+
+upload.single ~ 이게 req.file에다가 할당해줌.
+이걸 conosle.log(req.file)해보면?
+json형식이 나옴. 당연히 키값으로 그값들을 출력가능
+
+
+
+
+데이터베이스
+relational database vs relational이 아닌것.
+mysql이 가장 기본적인... 프로그래밍 언어라고도 할 수 있음.
+Nosql (not only sql) 이 출현

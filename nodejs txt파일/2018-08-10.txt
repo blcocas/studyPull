@@ -1,0 +1,88 @@
+오라클은 비쌈, 웹이 출현하면서 많은 웹어플리케이션이 만들어짐. 
+그러면서 기존의 데이터베이스는 부담스러운 시스템임. 이러한 요구에 맞춰서
+mysql이라는 무료고, 오픈소스인, 성능도 괜찮고, 이러한 데이터베이스가 등장함.
+아파치,php,mysql amp 이러한 트리오로 많이 사용되었음.
+
+mysql > 썬 > 오라클
+
+mysql이 오라클로 넘어가면서 mysql개발자가 mysql에 호환되는 maria db를 만듦.
+
+이러한 변화가 시작됨. 최근에는 이러한 분위기속에서 
+아마존의 오로라라는 클라우드컴퓨팅의 특성을 가진 데이터베이스도 등장.
+요즘 분위기가 mysql에 호환되는 이런 데이터베이스가 등장하는 추세임. mysql의 춘추전국시대..
+
+mysql의 기본
+가장 기본은 역시 table (row(record,data) *column(key)). 
+이러한 table이 여러개로 구성되어있음. 
+이렇게 table이 늘어나게 되면 이 table들을 그룹핑 해서 관리가 필요하게됨.
+그게바로 database임. 이렇게 하나의 웹앱에 하나의 데이터베이스가 대응이되어짐.
+데이터베이스 서버는 데이터 베이스가 위치한 컴퓨터를 의미함.
+즉 어떤 앱에서 데이터베이스에 접속하기 위해서는 일단 그 데이터베이스가 위치한 컴퓨터로
+먼저 접속을 해야한다는 의미.
+
+mysql -u root = mysql -h localhost -u root 나의 컴퓨터에 접속한다는 의미임.
+-h을 안적어준다면 디폴트로 로컬로 접속한다는 의미인것같다.
+
+mysql -u -h opentutorials.org -P3000 -uroot -p bimilbunho
+해당주소 포트 3000번에 root권한으로 비밀번호를 입력해서 접속한다는 뜻.
+
+이제 데이터베이스를 만드는작업.
+데이터베이스 안에 테이블이 있고 그안에 키가 있고 데이타가 있음.
+키나 테이블은 메타데이터라고함.
+
+CREATE DATABASE o2;
+o2라는 데이터베이스 생성 명령어
+
+SHOW DATABASES; 
+현재 서버에 있는 데이터베이스 목록 보여줌.
+
+USE o2;
+o2라는 데이터베이스를 사용하겠다.
+
+SHOW TABLES;
+현재 데이터베이스에 있는 테이블 목록 출력.
+
+테이블을 만들때에는 그안에 들어가는 key들을 설정해주는데, 
+일단 각 key값의 속성들은 type(데이터타입),NULL(NULL이 허용되는지 안되는지), 
+KEY(primary key), default(default값이 무엇인지) 등이 있음.
+그래서 테이블을 선언할때는 이러한 속성도 같이 선언해야함.
+
+CREATE TABLE topic(
+id int(11) NOT NULL AUTO_INCREMENT,
+title varchar(20) NOT NULL,
+description varchar(50) NOT NULL, 
+author varchar(20) NOT NULL,
+PRIMARY KEY (id)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+topic이라는 테이블을 만들고 그 테이블의 키 4개선언해서 테이블을 정의.
+
+DESC topic;
+그리고 topic 테이블의 속성을 확인.
+
+INSERT INTO topic VALUES( 1, 'nodejs', 'for server', 'hong');
+topic이라는 테이블에 키의 순서대로 데이터삽입.
+
+INSERT INTO topic (title, description, author) VALUES('javascript', 'for anything' ,'hong');
+각각 키값에다가 인자를 넣은 순서에 맞춰서 데이터삽입.
+
+SELECT * from topic;
+뒤에서 더 구체적이게 하겠지만, topic의 테이블을 쿼리하는것.
+SELECT는 키를 가져오고, from은 테이블을 말함. where은 키값으로 가져옴.
+
+UPDATE topic SET description='it is nodejs' WHERE title='nodejs';
+topic이라는 테이블에서 description키값을 다음으로 바꾼다. 
+무엇을? title의 키값이 다음과같은것을.
+
+DELETE FROM topic WHERE title='nodejs';
+topic 테이블에서 키값이 다음과같은 row를 삭제한다.
+
+
+Nodejs에서의 mysql연동
+역시 mysql과 연동시키려면 미들웨어가 필요하다.> node-mysql
+
+
+
+
+
+
+
