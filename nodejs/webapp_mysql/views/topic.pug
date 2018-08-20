@@ -1,0 +1,22 @@
+html
+  head
+    title Topic
+  body
+    h1
+      a(href='/topic') Topic List!
+    ol
+      each val in list
+        li
+          a(href='/topic/' + val.id)= val.title
+    if (topic)
+      h3= topic.title
+      div= topic.description
+    br
+    ul
+      li
+        a(href='/topic/add') add
+      if (topic)
+        li
+          a(href='/topic/' + topic.id + '/edit') edit
+        li
+          a(href='/topic/' + topic.id + '/delete') delete

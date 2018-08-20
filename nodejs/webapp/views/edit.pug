@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    title TopicList
+  body
+    h2
+      a(href='/topic') TopicList!
+    ul
+      each val in topics
+        li
+          a(href='/topic/'+val)= val
+    div
+      a(href='/topic/new') Make New!
+    h3= title
+    div= content

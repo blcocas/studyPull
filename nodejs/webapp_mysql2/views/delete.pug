@@ -1,0 +1,22 @@
+html
+  head
+    title topic
+  body
+    h1
+      a(href='/topic') Topics!
+    ol
+      each val in list
+        li
+          a(href='/topic/' + val.id)= val.title
+    if(topic)
+      article
+        h2
+          div= topic.title
+        div= topic.description
+        em
+          div= topic.author
+    form(action='/topic/'+topic.id+'/delete' method='post')
+      h2 Delete this File???
+        p
+          input(type='submit' value='YES')
+        a(href='/topic') NO

@@ -14,6 +14,18 @@ app.set('view engine','pug'); //어떤 templete엔진?
 
 app.locals.pretty = true; //html소스 이쁘게
 
+//mysql--------------------------------------
+const mysql = require('mysql');
+var conn = mysql.createConnection({
+  host : 'localhost',
+  user : 'root',
+  password : 'ghdwo966',
+  database : 'webapp'
+});
+conn.connect(function(err){
+  if (err) throw err;
+});
+
 //get & post-----------------------------------
 
 

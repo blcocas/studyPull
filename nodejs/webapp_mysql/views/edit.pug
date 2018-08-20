@@ -1,0 +1,19 @@
+html
+  head
+    title Topic
+  body
+    h1
+      a(href='/topic') Topic List!
+    ol
+      each val in list
+        li
+          a(href='/topic/' + val.title)= val.title
+
+    form(action='/topic/' +topic.id + '/edit' method='post')
+      p
+        input(type='text' name='title' value= topic.title)
+      p
+        textarea(name='desc')
+          =topic.description
+      p
+        input(type='submit')
